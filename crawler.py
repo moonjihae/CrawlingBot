@@ -1,7 +1,7 @@
 from selenium import webdriver
 import time
 from send_messages import send_message_to_slack
-
+import config
 
 def crawling(id, pw):
     options = webdriver.ChromeOptions()
@@ -9,7 +9,7 @@ def crawling(id, pw):
     options.add_argument('headless')
     options.add_argument('window-size=1920x1080')
     options.add_argument('disable-gpu')
-    driver = webdriver.Chrome("../codereview-reminder/chromedriver.exe", chrome_options=options)
+    driver = webdriver.Chrome("chromedriver.exe", chrome_options=options)
 
     driver.get(
         "https://logins.daum.net/accounts/loginform.do?status=-401&url=http%3A%2F%2Fm.cafe.daum.net%2F_myAlimis%2Fnewarticle%3Fnull")
@@ -52,4 +52,4 @@ def crawling(id, pw):
 
 
 if __name__ == "__main__":
-    crawling("", "")  # 유저의 id,pw 입력
+    crawling(config.id,config.pw )  # 유저의 id,pw 입력
