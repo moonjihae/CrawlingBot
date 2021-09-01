@@ -15,9 +15,9 @@ python으로 제작한 크롤링 슬랙 알림봇
 * 30초 마다 새 글을 크롤링합니다.
 * 크롤링후 새로운 글이 존재한다면 슬랙 메세지를 전송합니다.
 * aws lightsail 환경에서 Selenium을 사용하기위해 Dockerfiie을 통해 Chrome앱 설치합니다.
-  ''' docker
+  ``` docker
   RUN apt-get install -yqq unzip
   RUN wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`/chromedriver_linux64.zip
   RUN unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin
-  '''
+  ``` 
 
